@@ -13,6 +13,7 @@
     <description>Support convert java base type like String, Short, Integer, Long, Boolean, Float, Double. when use with adapter-simple-body</description>
     <artifactId>converter-simple-body-base-type</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
     <packaging>jar</packaging>
 
     <properties>
@@ -35,7 +36,7 @@
         <dependency>
             <groupId>io.github.easyretrofit</groupId>
             <artifactId>easy-retrofit-adapter-simple-body</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
 
