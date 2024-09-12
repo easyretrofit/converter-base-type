@@ -6,13 +6,13 @@
     <parent>
         <groupId>io.github.easyretrofit</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <description>Support convert java base type like String, Short, Integer, Long, Boolean, Float, Double. when use with adapter-simple-body</description>
     <artifactId>converter-simple-body-base-type</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <packaging>jar</packaging>
 
