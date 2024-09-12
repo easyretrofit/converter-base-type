@@ -4,3 +4,4 @@ Support convert java base type like String, Short, Integer, Long, Boolean, Float
 This converter needs to be used with the specified Call Adapter, which is an [easy-retrofit-adapter-simple-body](https://github.com/easyretrofit/adapter-simple-body/blob/main/README.md)
 
 
+## Usage
