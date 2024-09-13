@@ -11,8 +11,8 @@ This converter needs to be used with the specified Call Adapter, which is an [ea
 tips: 
 
 if the response is JSON, you need add another converter factory like `GsonConverterFactory.create()`
+please keep `BaseTypeConverterFactory` in the first of the converter factory list
 
-Actually, If response is JSON and you used GsonConverterFactory, you can not use this converter😂, so pls try to play any converter with any adapter 
 
 ## Usage
 Maven:
