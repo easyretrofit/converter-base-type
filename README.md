@@ -6,15 +6,13 @@
 # converter-base-type
 Support convert java base type like String, Short, Integer, Long, Boolean, Float, Double when you project just use `easy-retrofit-adapter-simple-body` Call Adapter. 
 
-
-
 This converter needs to be used with the specified Call Adapter, which is an [easy-retrofit-adapter-simple-body](https://github.com/easyretrofit/adapter-simple-body/blob/main/README.md)
 
 tips: 
 
-**if the response is JSON, you need add another converter factory like `GsonConverterFactory.create()`
+if the response is JSON, you need add another converter factory like `GsonConverterFactory.create()`
 
-Actually, if you used GsonConverterFactory, you can not use this converter, 😂 **
+Actually, If response is JSON and you used GsonConverterFactory, you can not use this converter😂, so pls try to play any converter with any adapter 
 
 ## Usage
 Maven:
