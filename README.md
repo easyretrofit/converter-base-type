@@ -4,9 +4,66 @@
 
 
 # converter-base-type
-Support convert java base type like String, Short, Integer, Long, Boolean, Float, Double when you use `easy-retrofit-adapter-simple-body` 
+Support convert java base type like String, Short, Integer, Long, Boolean, Float, Double when you project just use `easy-retrofit-adapter-simple-body` Call Adapter. 
+
+Actually, if you used GsonConverterFactory, for the json response, it will be converted to the corresponding object automatically.
 
 This converter needs to be used with the specified Call Adapter, which is an [easy-retrofit-adapter-simple-body](https://github.com/easyretrofit/adapter-simple-body/blob/main/README.md)
 
+tips: if the response is JSON, you need add another converter factory like `GsonConverterFactory.create()`
 
 ## Usage
+Maven:
+```xml
+<dependency>
+    <groupId>io.github.easyretrofit</groupId>
+    <artifactId>converter-simple-body-base-type</artifactId>
+    <version>${latest.version}</version> <!-- 替换为实际的版本号 -->
+</dependency>
+```
+
+Gradle:
+```groovy
+implementation 'io.github.easyretrofit:converter-simple-body-base-type:${latest.version}'
+```
+
+### used with easy-retrofit
+
+#### create a SimpleBodyCallAdapterFactoryBuilder class
+```java
+
+public class SimpleBodyCallAdapterFactoryBuilder extends BaseCallAdapterFactoryBuilder {
+    @Override
+    public Converter.Factory build() {
+        return SimpleBodyCallAdapterFactory.create();
+    }
+}
+
+public class BaseTypeConverterFactoryBuilder extends BaseConverterFactoryBuilder {
+    @Override
+    public Converter.Factory build() {
+        return BaseTypeConverterFactory.create();
+    }
+}
+
+```
+
+#### add SimpleBodyCallAdapterFactoryBuilder and BaseTypeConverterFactoryBuilder to your RetrofitBuilder
+```java
+@RetrofitBuilder(baseUrl = "${app.backend.url}",
+        addConverterFactory = {BaseTypeConverterFactoryBuilder.class},
+        addCallAdapterFactory = {SimpleBodyCallAdapterFactoryBuilder.class})
+public interface HelloApi {
+
+}
+```
+
+
+### used with retrofit2
+```java
+
+Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url("/"))
+        .addConverterFactory(BaseTypeConverterFactory.create())
+        .addCallAdapterFactory(SimpleBodyCallAdapterFactory.create())
+        .build();
+```
