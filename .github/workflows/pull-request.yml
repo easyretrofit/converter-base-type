@@ -6,19 +6,9 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Build
+name: Pull Request
 
 on:
-  push:
-    branches: [ "main" ]
-    paths-ignore:
-      - '.gitignore'
-      - 'CODEOWNERS'
-      - 'LICENSE'
-      - '*.md'
-      - '*.adoc'
-      - '*.txt'
-      - '.all-contributorsrc'
   pull_request:
     branches: [ "main" ]
     paths-ignore:
@@ -30,6 +20,9 @@ on:
       - '*.txt'
       - '.all-contributorsrc'
 jobs:
+
+  release-name-check:
+    uses: ./.github/workflows/pre-release.yml
 
   build:
     runs-on: ubuntu-latest
